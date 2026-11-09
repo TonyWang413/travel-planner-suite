@@ -34,5 +34,10 @@ python3 sync_to_notion.py
 
 ---
 
-## 📋 Session Handoff (`AGENTS.md`)
-After initial successful sync, generate or update `<workspace_root>/AGENTS.md` so future agent sessions immediately know the trip context, Notion page ID, and the zero-click sync rule.
+## 📋 Session Handoff (`AGENTS.md`) Generation
+
+After the initial successful sync, read the template [AGENTS.template.md](./resources/AGENTS.template.md) and generate `<workspace_root>/AGENTS.md` tailored to this specific trip (filling in title, dates, flights, hotels, and daily highlights).
+
+### 🚨 Mandatory Rules in `AGENTS.md`:
+* **Use Relative Paths Only**: Never use absolute paths (such as `/Users/...` or `file:///...`) in any project documentation or files; always use relative paths (e.g., `./Notion_Itinerary/Day1_Arriving.md`).
+* **Zero-Click Sync**: Future agent sessions must automatically run `python3 sync_to_notion.py` on any itinerary edit without asking the user.
