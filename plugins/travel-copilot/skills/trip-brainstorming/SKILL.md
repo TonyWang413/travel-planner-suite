@@ -37,8 +37,8 @@ Once the daily outline is confirmed with the user, create the following director
 └── Full_Itinerary.md                # Single-page complete backup of the trip
 ```
 
-### Formatting Requirements for Compatibility
-To ensure these files can seamlessly integrate with calendar export and Notion sync later:
+### 🚨 Mandatory Path & Formatting Rules
+* **Use Relative Paths Only**: Every link, image, or file reference MUST use relative paths (e.g., `./Notion_Itinerary/Day1_Arriving.md` or `Trip_Dashboard.md`). NEVER use absolute paths (`/Users/...` or `file:///...`).
 * **Level 1 Heading**: Every subpage MUST begin with `# 📅 Day X...` or `# 💡...` as line 1.
 * **Back-Link**: Every subpage MUST include `[⬅️ 返回行程儀表板](Trip_Dashboard.md)` right below the heading.
 * **Dashboard Links**: In `Trip_Dashboard.md`, use exact filenames: `* 🔗 **[Day 1](Day1_Arriving.md)**`.

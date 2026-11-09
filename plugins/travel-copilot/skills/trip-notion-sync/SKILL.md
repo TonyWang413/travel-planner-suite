@@ -30,14 +30,5 @@ python3 sync_to_notion.py
 ```
 
 * **If status 404**: Remind the user to click `...` on the Notion page ➔ `Connect to` ➔ Select their integration bot, then re-run automatically.
-* **Auto-Sync on Edits**: During subsequent turns, whenever an itinerary file is modified, rerun `python3 sync_to_notion.py` in the background automatically.
-
----
-
-## 📋 Session Handoff (`AGENTS.md`) Generation
-
-After the initial successful sync, read the template [AGENTS.template.md](./resources/AGENTS.template.md) and generate `<workspace_root>/AGENTS.md` tailored to this specific trip (filling in title, dates, flights, hotels, and daily highlights).
-
-### 🚨 Mandatory Rules in `AGENTS.md`:
-* **Use Relative Paths Only**: Never use absolute paths (such as `/Users/...` or `file:///...`) in any project documentation or files; always use relative paths (e.g., `./Notion_Itinerary/Day1_Arriving.md`).
-* **Zero-Click Sync**: Future agent sessions must automatically run `python3 sync_to_notion.py` on any itinerary edit without asking the user.
+* **Auto-Sync on Edits (Zero-Click Sync)**: Whenever an itinerary file is modified in subsequent turns, YOU (the agent) MUST rerun `python3 sync_to_notion.py` in the background automatically. Never ask the user to run commands manually.
+* **Relative Paths Only**: Ensure all generated or modified Markdown links remain strictly relative.
