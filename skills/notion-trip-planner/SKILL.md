@@ -104,10 +104,12 @@ python3 sync_to_notion.py
 If it returns a `404` error, politely remind the user to open the Notion page's top-right `...` menu ➔ `Connect to` and authorize the integration bot, then re-run automatically once they confirm.
 
 ### 4. Generate Workspace `AGENTS.md`
-Once the initial files and Notion sync are set up, create `<workspace_root>/AGENTS.md` containing:
+Once the initial files and Notion sync are set up, read the template [AGENTS.template.md](./resources/AGENTS.template.md) and create `<workspace_root>/AGENTS.md` containing:
 * **Trip Context**: Destination, dates, flights, hotel, and daily highlights for THIS specific trip.
 * **Workspace Architecture**: Overview of `Notion_Itinerary/`, `.ics`, and `sync_to_notion.py`.
-* **Zero-Click Sync Rule for Future Sessions**: Explicit instructions telling any future agent session in this folder to edit `Notion_Itinerary/*.md`, update the `.ics` file if times changed, and automatically run `python3 sync_to_notion.py` without asking the user to run commands.
+* **Mandatory Rules in `AGENTS.md`**:
+  * **Use Relative Paths Only**: Never use absolute paths (such as `/Users/...` or `file:///...`) in any project documentation or files; always use relative paths (e.g., `./Notion_Itinerary/Day1_Arriving.md`).
+  * **Zero-Click Sync**: Future agent sessions must automatically run `python3 sync_to_notion.py` on any itinerary edit without asking the user.
 
 ---
 
