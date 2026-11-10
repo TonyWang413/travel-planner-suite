@@ -417,7 +417,7 @@ def main():
     parser.add_argument(
         "--itinerary-dir",
         default=None,
-        help="Directory containing the Markdown files (defaults to <project-dir>/Itinerary or <project-dir>/Notion_Itinerary)"
+        help="Directory containing the Markdown files (defaults to <project-dir>/Itinerary)"
     )
     parser.add_argument(
         "--dashboard",
@@ -427,18 +427,7 @@ def main():
     args = parser.parse_args()
 
     project_dir = os.path.abspath(args.project_dir)
-    if args.itinerary_dir:
-        itinerary_dir = os.path.abspath(args.itinerary_dir)
-    else:
-        # Check Itinerary first, fall back to Notion_Itinerary for backwards compatibility
-        default_itinerary = os.path.join(project_dir, "Itinerary")
-        legacy_itinerary = os.path.join(project_dir, "Notion_Itinerary")
-        if os.path.exists(default_itinerary):
-            itinerary_dir = default_itinerary
-        elif os.path.exists(legacy_itinerary):
-            itinerary_dir = legacy_itinerary
-        else:
-            itinerary_dir = default_itinerary
+    itinerary_dir = os.path.abspath(args.itinerary_dir) if args.itinerary_dir else os.path.join(project_dir, "Itinerary")
 
     if not os.path.exists(itinerary_dir):
         print(f"Error: Itinerary directory not found: {itinerary_dir}")

@@ -14,7 +14,7 @@ This skill extracts scheduled events, flights, dining reservations, and activiti
 
 ## 🛠️ Execution Procedure
 
-1. Read the local itinerary files (`Full_Itinerary.md` or files inside `Notion_Itinerary/`).
+1. Read the local itinerary files (`Full_Itinerary.md` or files inside `Itinerary/`).
 2. Identify all timed events (Flight arrival, check-in, reservations, key stops).
 3. Generate `<workspace_root>/Trip_Itinerary.ics` using standard iCalendar VEVENT blocks:
    * `DTSTART` / `DTEND` (Formatted as `YYYYMMDDTHHMMSS` in local trip timezone)
