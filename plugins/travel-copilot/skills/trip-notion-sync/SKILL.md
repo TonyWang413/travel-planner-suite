@@ -8,7 +8,7 @@ description: >-
 
 # 🔗 Notion Wiki Synchronizer (`trip-notion-sync`)
 
-This skill handles syncing the multi-page travel guide located in `<workspace_root>/Notion_Itinerary/` directly into the user's Notion page using the universal synchronization engine.
+This skill handles syncing the multi-page travel guide located in `<workspace_root>/Itinerary/` directly into the user's Notion page using the universal synchronization engine.
 
 ---
 
@@ -30,5 +30,5 @@ python3 sync_to_notion.py
 ```
 
 * **If status 404**: Remind the user to click `...` on the Notion page ➔ `Connect to` ➔ Select their integration bot, then re-run automatically.
-* **Auto-Sync on Edits (Zero-Click Sync)**: Whenever an itinerary file is modified in subsequent turns, YOU (the agent) MUST rerun `python3 sync_to_notion.py` in the background automatically. Never ask the user to run commands manually.
+* **Auto-Sync on Edits (Zero-Click Sync)**: Whenever an itinerary file inside `./Itinerary/` is modified in subsequent turns, YOU (the agent) MUST rerun `python3 sync_to_notion.py` in the background automatically. Never ask the user to run commands manually.
 * **Relative Paths Only**: Ensure all generated or modified Markdown links remain strictly relative.

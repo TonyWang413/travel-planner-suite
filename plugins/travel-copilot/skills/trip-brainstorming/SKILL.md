@@ -27,7 +27,7 @@ Once the daily outline is confirmed with the user, create the following director
 
 ```text
 <workspace_root>/
-├── Notion_Itinerary/
+├── Itinerary/                       # Hub & daily detailed schedules (platform-agnostic)
 │   ├── Trip_Dashboard.md            # Hub: Overview, Mermaid Gantt chart, subpage links
 │   ├── Day1_<Theme>.md              # Day 1 detailed schedule & transit guide
 │   ├── Day2_<Theme>.md              # Day 2 detailed schedule...
@@ -38,7 +38,7 @@ Once the daily outline is confirmed with the user, create the following director
 ```
 
 ### 🚨 Mandatory Path & Formatting Rules
-* **Use Relative Paths Only**: Every link, image, or file reference MUST use relative paths (e.g., `./Notion_Itinerary/Day1_Arriving.md` or `Trip_Dashboard.md`). NEVER use absolute paths (`/Users/...` or `file:///...`).
+* **Use Relative Paths Only**: Every link, image, or file reference MUST use relative paths (e.g., `./Itinerary/Day1_Arriving.md` or `Trip_Dashboard.md`). NEVER use absolute paths (`/Users/...` or `file:///...`).
 * **Level 1 Heading**: Every subpage MUST begin with `# 📅 Day X...` or `# 💡...` as line 1.
 * **Back-Link**: Every subpage MUST include `[⬅️ 返回行程儀表板](Trip_Dashboard.md)` right below the heading.
 * **Dashboard Links**: In `Trip_Dashboard.md`, use exact filenames: `* 🔗 **[Day 1](Day1_Arriving.md)**`.
