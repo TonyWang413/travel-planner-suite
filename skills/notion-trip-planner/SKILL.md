@@ -48,7 +48,7 @@ Once the outline is agreed upon, create the following structure in the current w
 
 ```text
 <workspace_root>/
-├── Notion_Itinerary/
+├── Itinerary/                       # Hub & daily detailed schedules (platform-agnostic)
 │   ├── Trip_Dashboard.md            # Main hub (Overview, quick links, Mermaid Gantt chart)
 │   ├── Day1_<Theme>.md              # Day 1 detailed schedule, transit guide, dining Plan A/B
 │   ├── Day2_<Theme>.md              # Day 2 detailed schedule...
@@ -62,8 +62,8 @@ Once the outline is agreed upon, create the following structure in the current w
 └── .gitignore                       # Must ignore .env, __pycache__/, *.pyc
 ```
 
-### Markdown Formatting Rules for `Notion_Itinerary/*.md`
-* **Top Heading (`# Title`)**: Every file in `Notion_Itinerary/` MUST start with a level-1 heading `# ...`. The script uses this as the Notion subpage title.
+### Markdown Formatting Rules for `Itinerary/*.md`
+* **Top Heading (`# Title`)**: Every file in `Itinerary/` MUST start with a level-1 heading `# ...`. The script uses this as the Notion subpage title.
 * **Dashboard Links**: In `Trip_Dashboard.md`, link to each subpage using its exact filename:
   ```markdown
   * 🔗 **[Day 1：5/27 (三) | 抵達與漫步](Day1_Arriving.md)**
@@ -91,6 +91,6 @@ If the user wants to sync to Notion:
 ## 🔄 Phase 4: Iterative Refinement Loop
 
 Whenever the user asks to change, add, or swap any part of the itinerary:
-1. Update the relevant file(s) inside `Notion_Itinerary/` (using relative links only).
+1. Update the relevant file(s) inside `Itinerary/` (using relative links only).
 2. If Notion sync is configured, immediately and automatically run `python3 sync_to_notion.py` in the background.
 3. Tell the user the changes are live!
